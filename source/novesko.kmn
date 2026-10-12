@@ -1,0 +1,108 @@
+﻿c novesko generated from template at 2026-04-25 13:19:13
+c with name "Novesko"
+store(&VERSION) '15.0'
+store(&NAME) 'Novesko'
+store(&COPYRIGHT) 'Copyright © ego.sum.caelum@gmail.com'
+store(&KEYBOARDVERSION) '1.1.0'
+store(&LAYOUTFILE) 'novesko.keyman-touch-layout'
+store(&TARGETS) 'any'
+
+begin Unicode > use(main)
+
+group(main) using keys
+
+c ----------------------------------------------------------------
+c Hardware (physical) keyboard: Novesko Cyrillic layout.
+c Mirrors the touch layout rows:
+c   џ ў е р т й у и о п ѕ   on  q w e r t y u i o p [
+c   а с д ф г һ ж к л ч ш   on  a s d f g h j k l ; '
+c   з х ц в б н м               on  z x c v b n m
+c Digits and punctuation pass through from the underlying layout.
+c ----------------------------------------------------------------
+
+c Caps Lock acts like Shift on every letter key
+store(&CasedKeys) [K_Q] [K_W] [K_E] [K_R] [K_T] [K_Y] [K_U] [K_I] [K_O] [K_P] [K_LBRKT] [K_A] [K_S] [K_D] [K_F] [K_G] [K_H] [K_J] [K_K] [K_L] [K_COLON] [K_QUOTE] [K_Z] [K_X] [K_C] [K_V] [K_B] [K_N] [K_M]
+
+c Row 1
++ [K_Q] > 'џ'
++ [K_W] > 'ў'
++ [K_E] > 'е'
++ [K_R] > 'р'
++ [K_T] > 'т'
++ [K_Y] > 'й'
++ [K_U] > 'у'
++ [K_I] > 'и'
++ [K_O] > 'о'
++ [K_P] > 'п'
++ [K_LBRKT] > 'ѕ'
+
+c Row 2
++ [K_A] > 'а'
++ [K_S] > 'с'
++ [K_D] > 'д'
++ [K_F] > 'ф'
++ [K_G] > 'г'
++ [K_H] > 'һ'
++ [K_J] > 'ж'
++ [K_K] > 'к'
++ [K_L] > 'л'
++ [K_COLON] > 'ч'
++ [K_QUOTE] > 'ш'
+
+c Row 3
++ [K_Z] > 'з'
++ [K_X] > 'х'
++ [K_C] > 'ц'
++ [K_V] > 'в'
++ [K_B] > 'б'
++ [K_N] > 'н'
++ [K_M] > 'м'
+
+c Shift: Row 1
++ [SHIFT K_Q] > 'Џ'
++ [SHIFT K_W] > 'Ў'
++ [SHIFT K_E] > 'Е'
++ [SHIFT K_R] > 'Р'
++ [SHIFT K_T] > 'Т'
++ [SHIFT K_Y] > 'Й'
++ [SHIFT K_U] > 'У'
++ [SHIFT K_I] > 'И'
++ [SHIFT K_O] > 'О'
++ [SHIFT K_P] > 'П'
++ [SHIFT K_LBRKT] > 'Ѕ'
+
+c Shift: Row 2
++ [SHIFT K_A] > 'А'
++ [SHIFT K_S] > 'С'
++ [SHIFT K_D] > 'Д'
++ [SHIFT K_F] > 'Ф'
++ [SHIFT K_G] > 'Г'
++ [SHIFT K_H] > 'Һ'
++ [SHIFT K_J] > 'Ж'
++ [SHIFT K_K] > 'К'
++ [SHIFT K_L] > 'Л'
++ [SHIFT K_COLON] > 'Ч'
++ [SHIFT K_QUOTE] > 'Ш'
+
+c Shift: Row 3
++ [SHIFT K_Z] > 'З'
++ [SHIFT K_X] > 'Х'
++ [SHIFT K_C] > 'Ц'
++ [SHIFT K_V] > 'В'
++ [SHIFT K_B] > 'Б'
++ [SHIFT K_N] > 'Н'
++ [SHIFT K_M] > 'М'
+
+c AltGr + vowel = vowel with acute accent (stress mark, U+0301)
++ [RALT K_A] > 'а' U+0301
++ [RALT K_E] > 'е' U+0301
++ [RALT K_I] > 'и' U+0301
++ [RALT K_O] > 'о' U+0301
++ [RALT K_U] > 'у' U+0301
+
+c AltGr + Shift + vowel = capital vowel with acute accent
++ [SHIFT RALT K_A] > 'А' U+0301
++ [SHIFT RALT K_E] > 'Е' U+0301
++ [SHIFT RALT K_I] > 'И' U+0301
++ [SHIFT RALT K_O] > 'О' U+0301
++ [SHIFT RALT K_U] > 'У' U+0301
